@@ -1,9 +1,9 @@
 package com.chefcontrol.repository;
 
-import com.chefcontrol.models.TipoPedido;
+import com.chefcontrol.models.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TipoPedidoRepository extends JpaRepository<TipoPedido, Integer> {
+public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 }

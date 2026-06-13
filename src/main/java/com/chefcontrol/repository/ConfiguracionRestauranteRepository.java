@@ -1,9 +1,9 @@
 package com.chefcontrol.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.chefcontrol.models.ConfiguracionRestaurante;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ConfiguracionRestauranteRepository
-        extends JpaRepository<ConfiguracionRestaurante, Integer> {
+@Repository
+public interface ConfiguracionRestauranteRepository extends JpaRepository<ConfiguracionRestaurante, Integer> {
 }

@@ -1,14 +1,8 @@
 package com.chefcontrol.models;
 
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "configuraciones_restaurantes")
@@ -20,12 +14,24 @@ public class ConfiguracionRestaurante {
     @Column(name = "configuraciones_restaurantes_id")
     private Integer configuracionesRestaurantesId;
 
+    @Column(name = "configuraciones_restaurantes_nombre", length = 200)
+    private String configuracionesRestaurantesNombre;
+
+    @Column(name = "configuraciones_restaurantes_telefono", length = 30)
+    private String configuracionesRestaurantesTelefono;
+
+    @Column(name = "configuraciones_restaurantes_direccion")
+    private String configuracionesRestaurantesDireccion;
+
     @Column(name = "configuraciones_restaurantes_pedidos_habilitados")
-    private Boolean configuracionesRestaurantesPedidosHabilitados;
+    private Boolean configuracionesRestaurantesPedidosHabilitados = true;
 
     @Column(name = "configuraciones_restaurantes_hora_inicio")
-    private LocalDateTime configuracionesRestaurantesHoraInicio;
+    private LocalTime configuracionesRestaurantesHoraInicio;
 
     @Column(name = "configuraciones_restaurantes_hora_fin")
-    private LocalDateTime configuracionesRestaurantesHoraFin;
+    private LocalTime configuracionesRestaurantesHoraFin;
+
+    @Column(name = "configuraciones_restaurantes_max_mesas")
+    private Integer configuracionesRestaurantesMaxMesas;
 }
