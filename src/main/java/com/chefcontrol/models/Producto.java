@@ -1,8 +1,17 @@
 package com.chefcontrol.models;
 
-import jakarta.persistence.*;
-import lombok.Data;
 import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "productos")
@@ -14,7 +23,7 @@ public class Producto {
     @Column(name = "productos_id")
     private Integer productosId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "productos_categoria_id")
     private Categoria categoria;
 
